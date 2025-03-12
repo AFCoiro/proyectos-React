@@ -1,0 +1,30 @@
+*{
+margin: 0%;
+padding: 0%;
+box-sizing: border-box;
+font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: rgb(37, 37, 61);
+}
+.header-app{
+    width: 100%;
+    background-color: #c5ff07cf;
+    padding: 10px 0;
+}
+.header-app form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
+}
+
+.main-app{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding-top: 30px;
+}

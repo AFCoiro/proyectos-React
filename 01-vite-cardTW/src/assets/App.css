@@ -1,0 +1,73 @@
+.section-cards-app{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 0;
+    border: 1px solid black;
+}
+
+
+.follow-card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 400px;
+}
+.follow-card-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.follow-card-header>div{
+    display: flex;
+    flex-direction: column;
+}
+.follow-card-img{
+    width: 80px;
+}
+.follow-card-user{
+    color: grey;
+    font-weight: 200;
+    font-size: 14px;
+
+}
+.follow-card-btn{
+    font-weight: 700;
+    font-size: 16px;
+    color: white;
+    border: none;
+    background-color: #4F96DF;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;  
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.322);
+}
+.follow-card-btn:hover{
+    color: white;
+    background-color: #71a9e0;
+    transition:background-color 0.3s ease;  
+
+}
+.follow-card-btn-text,  .follow-card-btn.is-following:hover .follow-card-btn-stop{
+    display: block;
+}
+.follow-card-btn.is-following:hover .follow-card-btn-text, .follow-card-btn.is-following .follow-card-btn-stop , .follow-card-btn-stop{
+    display: none;
+}
+.follow-card-btn.is-following{
+    background-color: #b4b4b4;
+    color: #000;
+    width: 160px;
+}
+
+.follow-card-btn.is-following:hover{
+    background-color: #ff9d9d;
+    transition:background-color 0.3s ease;  
+    color: #ac0a0a;
+
+}
+
