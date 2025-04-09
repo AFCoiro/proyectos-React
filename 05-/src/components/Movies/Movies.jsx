@@ -4,6 +4,7 @@ import './movies.css'
     return(
         <>
             <h3>{movie.title}</h3>
+            <h4>{movie.year}</h4>
             <img src={`${movie.poster}`} alt="" />
         </>
     )
