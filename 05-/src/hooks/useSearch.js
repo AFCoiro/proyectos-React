@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react"
 
 export function useSearch() {
     const [search, setSearch] = useState('')
-    const [error, setError] = useState(null)
+    const [searchError, setSearchError] = useState(null)
     const isFirtsInput = useRef(true)
 
     useEffect(()=>{
@@ -11,15 +11,21 @@ export function useSearch() {
         isFirtsInput.current = search == ""
         return
         }
+        const timeoutId = setTimeout(() => {
         if (search == "") {
-            setError('No se puede buscar un vacio')
+            setSearchError('No se puede buscar un vacio')
             return
         }
-        setTimeout(() => {
-        if (search.length < 3) {
-            setError('No se puede buscar algo con menos de 3 caracteres')
+        
+            if (search.length < 3) {
+                setSearchError('No se puede buscar algo con menos de 3 caracteres')
             return
         }
-        }, 300)
+        setSearchError(null);
+        }, 1000)
+        return () => clearTimeout(timeoutId);
+
     },[search])
+    return { search, setSearch, searchError };
+
 }

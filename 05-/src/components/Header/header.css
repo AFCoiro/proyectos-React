@@ -1,0 +1,6 @@
+.errorSearch{
+    color: red;
+}
+.inputSearch.error{
+    border-color: red;
+}
