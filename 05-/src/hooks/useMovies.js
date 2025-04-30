@@ -1,19 +1,21 @@
- import { useState } from 'react';
+ import { useRef, useState } from 'react';
 import { searchMovies } from '../services/movies';
 
 export function useMovies({ search }) {
+
   const [movies,setMovies] = useState([]);
   const [error,setError] = useState(null);
   const [loading,setLoading] = useState(false);
   const [hasSearched, setHasSearched] = useState(false); 
 
+  const previusSearch = useRef(search);
   
       const getMovies = async()=>{
-
+        if(search === previusSearch.current) return;
         try{
           setLoading(true)
           setError(null)
-          setHasSearched(true)
+          previusSearch.current = search
           const newMovies = await searchMovies({search})
           setMovies(newMovies)
 
@@ -22,6 +24,7 @@ export function useMovies({ search }) {
 
         }finally{
           setLoading(false)
+          setHasSearched(true)
         }
 
       }
